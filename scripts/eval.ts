@@ -5,6 +5,21 @@ import { codeCommit, hash, object, repository, scoreFixture } from './eval-lib';
 import { checkFixtures, heldoutIdentity } from './fixture-lib';
 
 export interface EvalArgs { heldout: boolean; codeCommit?: string }
+/** Keep the declared generated README region derived from the canonical results artifact. */
+export async function syncReadmeResults(repo: string, markdown: string): Promise<void> {
+  const path = join(repo, 'README.md');
+  let current: string;
+  try { current = await readFile(path, 'utf8'); }
+  catch (error) { if (error instanceof Error && 'code' in error && error.code === 'ENOENT') return; throw error; }
+  const start = '<!-- evaluation-results:start -->', end = '<!-- evaluation-results:end -->';
+  const first = current.indexOf(start), last = current.indexOf(end);
+  if (first === -1 && last === -1) return;
+  if (first === -1 || last < first || current.indexOf(start, first + start.length) !== -1 ||
+    current.indexOf(end, last + end.length) !== -1) throw new Error('Invalid README results markers');
+  const body = markdown.trim().replace(/^# /u, '### ');
+  const updated = current.slice(0, first + start.length) + `\n\n${body}\n\n` + current.slice(last);
+  if (updated !== current) await writeFile(path, updated);
+}
 export function parseEvalArgs(args: string[]): EvalArgs {
   const result: EvalArgs = { heldout: false };
   for (let i = 0; i < args.length; i += 1) {
@@ -61,6 +76,7 @@ export async function main(args: string[]): Promise<void> {
   }
   await writeFile(join(results, 'results.jsonl'), jsonl);
   await writeFile(join(results, 'results.md'), markdown);
+  await syncReadmeResults(repository, markdown);
   console.log(`${split}: ${failed ? 'FAIL' : 'pass'}; ${checked.ids.length} fixtures; no model calls${heldout?.diagnostic ? '; diagnostic rerun' : ''}.`);
   if (failed) process.exitCode = 1;
 }

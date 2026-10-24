@@ -133,7 +133,7 @@ export async function scoreFixture(repo: string, split: 'dev' | 'heldout', id: s
   const negativeControlDifferences = comparePopulations({ tokens: expected.tokens, cost: { knownPico: object(expected.cost).knownPico } },
     { tokens: naive.tokens, cost: naive.cost });
   return { id, split, analysisOptions: analysisOptions ?? { schema: 's22-analysis-options/1', metadataCap: 1_000_000 },
-    actual, differences, naive, negativeControlDifferences, controlRequired: expected.tags.includes('accounting-control') };
+    report, actual, differences, naive, negativeControlDifferences, controlRequired: expected.tags.includes('accounting-control') };
 }
 /** Read only local Git metadata; never invoke git or another process. Detached HEAD/worktrees/packed refs supported. */
 export async function codeCommit(repo: string, explicit?: string): Promise<string> {
