@@ -1,0 +1,120 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D05",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "nonterminal-snapshot",
+    "conflicting-duplicates",
+    "model-conflict"
+  ],
+  "tokens": {
+    "input": "5",
+    "output": "2",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "1"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_snapshot": {
+      "input": "5",
+      "output": "2",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "1"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "31000000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "1",
+    "denominator": "6"
+  },
+  "events": {
+    "total": 1,
+    "byQuality": {
+      "verified": 0,
+      "observed_snapshot": 1,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 1,
+      "codex": 0
+    }
+  },
+  "modelCalls": 1,
+  "turns": {
+    "claude": 0,
+    "codex": 0
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {
+    "claude_conflicting_duplicates": 2,
+    "claude_model_conflict": 1
+  },
+  "skipped": {},
+  "counters": {
+    "claude_duplicate_rows": 4,
+    "claude_nonterminal_snapshot": 1,
+    "rowsRead": 8,
+    "rowsRecognised": 8
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "5",
+        "output": "2",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "1"
+      },
+      "knownPico": "31000000",
+      "events": 1
+    }
+  },
+  "complete": false
+}

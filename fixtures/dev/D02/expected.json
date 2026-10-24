@@ -1,0 +1,123 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D02",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "reasoning-inside-output",
+    "cumulative-delta",
+    "out-of-order",
+    "split-session",
+    "duplicate-copy",
+    "repeated-total",
+    "last-delta-mismatch"
+  ],
+  "tokens": {
+    "input": "100",
+    "output": "36",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "60"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "100",
+      "output": "36",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "60"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "274000000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "60",
+    "denominator": "160"
+  },
+  "events": {
+    "total": 3,
+    "byQuality": {
+      "verified": 3,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 0,
+      "codex": 3
+    }
+  },
+  "modelCalls": 3,
+  "turns": {
+    "claude": 0,
+    "codex": 1
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {},
+  "counters": {
+    "duplicate_copy": 1,
+    "codex_repeat_total": 1,
+    "codex_last_delta_mismatch": 1,
+    "ignored_record_kind": 1,
+    "rowsRead": 8,
+    "rowsRecognised": 7
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "100",
+        "output": "36",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "60"
+      },
+      "knownPico": "274000000",
+      "events": 3
+    }
+  },
+  "complete": true
+}

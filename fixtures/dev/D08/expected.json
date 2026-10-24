@@ -1,0 +1,129 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D08",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "synthetic-error",
+    "bad-count",
+    "bad-timestamp",
+    "missing-fields",
+    "empty-token-count"
+  ],
+  "tokens": {
+    "input": "11",
+    "output": "6",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "0"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "10",
+      "output": "6",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_snapshot": {
+      "input": "1",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "54000000",
+    "unknownPriceTokens": {
+      "input": "1",
+      "output": "1",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 1,
+      "byReason": {
+        "no_price_row": 1
+      },
+      "byModel": {
+        "unknown": 1
+      }
+    },
+    "complete": false
+  },
+  "cacheHit": {
+    "numerator": "0",
+    "denominator": "11"
+  },
+  "events": {
+    "total": 5,
+    "byQuality": {
+      "verified": 4,
+      "observed_snapshot": 1,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 4,
+      "codex": 1
+    }
+  },
+  "modelCalls": 5,
+  "turns": {
+    "claude": 0,
+    "codex": 1
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {
+    "synthetic_or_error_row": 3,
+    "bad_count": 5,
+    "bad_timestamp": 2
+  },
+  "counters": {
+    "synthetic_nonzero_usage": 1,
+    "claude_nonterminal_snapshot": 1,
+    "ignored_record_kind": 2,
+    "codex_token_count_empty": 2,
+    "rowsRead": 21,
+    "rowsRecognised": 7
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "11",
+        "output": "6",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "0"
+      },
+      "knownPico": "54000000",
+      "events": 5
+    }
+  },
+  "complete": false
+}

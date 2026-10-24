@@ -1,0 +1,4 @@
+{"timestamp":"2026-10-14T11:00:00Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000001005","cwd":"/synthetic/codex-project","forked_from_id":"00000000-0000-4000-8000-000000001003"}}
+{"timestamp":"2026-10-14T11:00:01Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000001003","cwd":"/synthetic/codex-project"}}
+{"timestamp":"2026-10-14T11:00:02Z","type":"turn_context","payload":{"turn_id":"d10-zero-child-turn","model":"gpt-test-x","cwd":"/synthetic/codex-project"}}
+{"timestamp":"2026-10-14T11:00:03Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":7,"cached_input_tokens":1,"output_tokens":3,"reasoning_output_tokens":1,"cache_write_input_tokens":0,"total_tokens":10},"last_token_usage":{"input_tokens":7,"cached_input_tokens":1,"output_tokens":3,"reasoning_output_tokens":1,"cache_write_input_tokens":0,"total_tokens":10}},"turn_id":"d10-zero-child-turn"}}

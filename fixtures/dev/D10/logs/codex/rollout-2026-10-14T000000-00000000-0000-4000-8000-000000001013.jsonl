@@ -1,0 +1,2 @@
+{"timestamp":"2026-10-14T11:00:00Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000001013","cwd":"/synthetic/codex-project","model":"gpt-test-x"}}
+{"timestamp":"2026-10-14T11:00:02Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":5,"cached_input_tokens":1,"output_tokens":2,"reasoning_output_tokens":1,"cache_write_input_tokens":0,"total_tokens":7},"last_token_usage":{"input_tokens":5,"cached_input_tokens":1,"output_tokens":2,"reasoning_output_tokens":1,"cache_write_input_tokens":0,"total_tokens":7}}}}
