@@ -6,7 +6,8 @@ export class DiagnosticBag {
   readonly values: Diagnostic[] = [];
   private readonly wide = new Map<string, Diagnostic>();
   private readonly evidenceCounts = new Map<string, number>();
-  constructor(private readonly budget: MetadataBudget) {}
+  private readonly budget: MetadataBudget;
+  constructor(budget: MetadataBudget) { this.budget = budget; }
   add(diagnostic: Diagnostic): void {
     const key = `${diagnostic.category}:${diagnostic.code}`;
     const previous = diagnostic.tsMs === undefined ? this.wide.get(key) : undefined;

@@ -475,3 +475,64 @@ No invalid UTF-8, very long line or overlong identity is planted; those remain D
 
 M3 construction uses only static file/JSON/key/encoding inspection. None of the formatting, recap, export safety,
 browser states, baseline separation or analyzer outcomes above has been executed or scored.
+
+## M4 append: D23-D24
+
+Same author, 2026-10-24. External backup before appending:
+`agentops/backups/m4-fixtures/oracle-worksheet.before-m4.0651.md`; all D01-D22 content is preserved.
+Both new answers use UTC, unbounded dates and the unchanged dev price table. Source reading, fixture-byte generation,
+JSON inspection and hashing were used; the app/analyzer, tests, build, eval and runtime validator were not executed.
+
+### D23: byte limit, strict UTF-8 and code-point identity limit
+
+One synthetic `limits.jsonl`, **8,422,176 bytes**, contains four LF-terminated lines:
+
+| Line | Bytes excluding LF | Construction / first applicable outcome |
+|---|---|---|
+| 1 | 8,388,609 | Otherwise valid assistant JSON with ASCII synthetic padding, exactly one byte over the 8,388,608-byte limit: line_too_long |
+| 2 | 17 | JSON-looking bytes with one literal FF byte in a string: strict UTF-8 fails, invalid_utf8; no JSON/timestamp outcome |
+| 3 | 16,730 | Valid assistant counts/timestamp; message.id is 4,097 test-tube emoji code points: field_too_long |
+| 4 | 16,816 | Valid control; message.id is exactly 4,096 test-tube emoji code points, so it is admitted |
+
+The rejected identity contains 8,194 UTF-16 units / 16,388 UTF-8 bytes; the admitted control contains 8,192 UTF-16 units /
+16,384 UTF-8 bytes. N1 uses code points, so the control must survive despite exceeding 4,096 UTF-16 units.
+The long padding line is discarded before decoding/JSON/row handling. All its usage, the invalid-byte line and the
+overlong-identity usage contribute nothing. Each produces exactly its one first-applicable skip, no ignored-kind,
+bad-timestamp, duplicate or unresolved-group code. Later valid usage survives all three preceding faults.
+
+Control buckets **(2,1,1,2,3)** use explicit 5m+1h split **1+2=3**. Known Claude A cost is
+**2×2+1×10+1×3+2×4+3×1 = 28 million pico**, exactly **28,000,000**. One verified Claude event/model call;
+cache **3/8**; one Oct 14 byDay entry with the same buckets/cost/event count. Turns/tools/results/retries/unknown-price/
+unresolved and observed-quality populations are zero. Skips **line_too_long 1 / invalid_utf8 1 / field_too_long 1**;
+rowsRead **4**, rowsRecognised **4−3=1**. Accounting complete false; cost complete true.
+The only deliberate invalid UTF-8 byte is line 2's FF; every other line is valid UTF-8, no BOM/CR is planted.
+
+### D24: dev-only zero metadata cap
+
+INT-authorized sidecar `analysis-options.json` is exactly the closed dev-only input
+`{"schema":"s22-analysis-options/1","metadataCap":0}` (pretty printed, **61 bytes**). It is not a source log or a
+new expected-schema root. The sole Claude `cap-zero.jsonl` is **344 bytes**, one LF-terminated, otherwise valid terminal
+assistant row: input **7**, output **3**, read **2**, model Claude A, normal short identities and valid Oct 14 timestamp.
+Without a cap this row would be eligible usage **(7,3,0,0,2)** at **46 million pico**; those amounts are deliberately
+not part of this capped oracle.
+
+Manual source trace (not execution):
+
+1. `analyze.ts` creates `MetadataBudget(0)` and the import-wide `DiagnosticBag`. Its first source-id `reserve()` fails;
+   `budget.diagnostic()` emits the single import-wide `metadata_cap_reached=1` and marks it reported. This untimed
+   constant-vocabulary diagnostic is retained by `diagnostics.ts` without another reservation.
+2. The source-id failure does not skip the input loop. L1 reads the one valid JSON record, so rowsRead becomes **1**.
+   `parseClaudeRecord` validates counts, timestamp and identity, then its row reservation fails. Since the cap reason
+   was already reported, its later `budget.diagnostic()` is empty; no row/fact/event is retained and no second reason
+   is emitted.
+3. Reconciliation, retry, aggregation and behavior receive empty retained populations. No row/line skip or ignored-kind
+   code exists, so hiddenRows is **0** and rowsRecognised is **1−0=1**. Recognised is the subtraction definition, not a
+   promise that metadata survived the cap. The source still has one read file; file/byte metadata is outside this oracle.
+4. The one unresolved import reason makes accounting complete false. No emitted event has an unknown price, so cost
+   complete remains true.
+
+Expected totals are zero in all five token buckets and all quality buckets, known cost **0**, no unknown-price events,
+events/modelCalls **0**, turns/tools/results/retries **0**, cache **0/0**, `byDay={}`, skipped map empty, unresolved
+**metadata_cap_reached 1**, counters **rowsRead 1 / rowsRecognised 1**. No unsupported size-budget or metamorphic proof
+is tagged; D24's only scored trap is `metadata-cap`. Such tests may reference its data separately. The sidecar is dev
+only; no held-out sidecar, frozen schema or frozen manifest file was read or changed by this fixture author.

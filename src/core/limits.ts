@@ -13,8 +13,10 @@ export function identityTooLong(values: readonly unknown[]): boolean {
 export class MetadataBudget {
   private used = 0;
   private reported = false;
-  constructor(readonly maximum = MAX_METADATA_ENTRIES) {
+  readonly maximum: number;
+  constructor(maximum = MAX_METADATA_ENTRIES) {
     if (!Number.isSafeInteger(maximum) || maximum < 0) throw new Error('Invalid metadata cap');
+    this.maximum = maximum;
   }
   // rule 4.7
   reserve(entries = 1): boolean {
