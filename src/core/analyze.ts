@@ -10,6 +10,8 @@ import { behavioralMetrics, formatPercent, makeMetricTable } from './metrics';
 import type { Platform } from './platform';
 import { validatePriceTable } from './prices';
 import { mergeReconciled, reconcileClaude } from './reconcile';
+import { checkedRecap } from './recap';
+import { RECAP_FAILURE_REASON } from './recapCheck';
 import { analyzeRetries } from './retry';
 import { checkSizeBudget, SizeBudgetError } from './sizeBudget';
 import { filterPredicate, validateFilters } from './time';
@@ -137,8 +139,11 @@ export async function analyze(sources: readonly InputSource[], options: AnalyzeO
     events: aggregate.events, modelCalls: aggregate.events.total, turns: behavior.turns, tools: behavior.tools, toolResults: behavior.toolResults,
     retries: retry.retries.filter(fact => selected(fact.tsMs)).length, retryAmbiguous: counters.get('retry_ambiguous_order') ?? 0,
     errorRate: behavior.errorRate, codexRetries: 'not available', sessionDurations: behavior.sessionDurations, groupings: aggregate.groupings,
-    skipped, unresolved, counters, evidence, metricTable: new Map(),
+    skipped, unresolved, counters, evidence, metricTable: new Map(), recapStatus: { ok: false, reason: RECAP_FAILURE_REASON },
   };
   report.metricTable = makeMetricTable(report);
+  const recap = checkedRecap(report.metricTable);
+  report.recapStatus = recap.recapStatus;
+  if (recap.recap) report.recap = recap.recap;
   return report;
 }

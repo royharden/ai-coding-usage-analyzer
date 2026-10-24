@@ -1,0 +1,1 @@
+{"type":"assistant","uuid":"D20-side-row","timestamp":"2026-10-15T11:59:00Z","sessionId":"D20-side-session","cwd":"/synthetic/beta/app","requestId":"D20-side-request","isSidechain":true,"message":{"id":"D20-side-message","model":"claude-test-b","usage":{"input_tokens":3,"output_tokens":1,"cache_read_input_tokens":0},"stop_reason":"end_turn","content":[]},"agentId":"d20-child"}

@@ -1,0 +1,131 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D21",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "hostile-strings",
+    "unknown-model",
+    "same-message-two-files"
+  ],
+  "tokens": {
+    "input": "10",
+    "output": "4",
+    "cacheWrite5m": "1",
+    "cacheWrite1h": "0",
+    "cacheRead": "4"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "10",
+      "output": "4",
+      "cacheWrite5m": "1",
+      "cacheWrite1h": "0",
+      "cacheRead": "4"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "15000000",
+    "unknownPriceTokens": {
+      "input": "8",
+      "output": "3",
+      "cacheWrite5m": "1",
+      "cacheWrite1h": "0",
+      "cacheRead": "3"
+    },
+    "unknownPriceEvents": {
+      "total": 3,
+      "byReason": {
+        "no_price_row": 3
+      },
+      "byModel": {
+        "__proto__": 1,
+        "constructor": 1,
+        "@synthetic|[x]*_<b>": 1
+      }
+    },
+    "complete": false
+  },
+  "cacheHit": {
+    "numerator": "4",
+    "denominator": "15"
+  },
+  "events": {
+    "total": 4,
+    "byQuality": {
+      "verified": 4,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 4,
+      "codex": 0
+    }
+  },
+  "modelCalls": 4,
+  "turns": {
+    "claude": 1,
+    "codex": 0
+  },
+  "tools": {
+    "total": 5,
+    "byName": {
+      "__proto__": 1,
+      "constructor": 1,
+      "=SUM(1,2)|[x]*_<b>": 1,
+      "mcp__constructor__tool": 1,
+      "<img src=x onerror=alert(1)>|[*]_`#": 1
+    },
+    "byMcpServer": {
+      "constructor": 1
+    }
+  },
+  "toolResults": {
+    "error": 1,
+    "ok": 2,
+    "unknown": 2
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {},
+  "counters": {
+    "claude_duplicate_rows": 1,
+    "claude_duplicate_tool_use": 1,
+    "rowsRead": 9,
+    "rowsRecognised": 9
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "10",
+        "output": "4",
+        "cacheWrite5m": "1",
+        "cacheWrite1h": "0",
+        "cacheRead": "4"
+      },
+      "knownPico": "15000000",
+      "events": 4
+    }
+  },
+  "complete": true
+}

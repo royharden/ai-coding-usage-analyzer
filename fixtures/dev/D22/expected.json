@@ -1,0 +1,115 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D22",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [],
+  "traps": [
+    "bom",
+    "blank-line",
+    "malformed-line",
+    "truncated-final",
+    "empty-file",
+    "non-jsonl",
+    "compressed-unsupported",
+    "unidentified-session"
+  ],
+  "tokens": {
+    "input": "0",
+    "output": "0",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "0"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "0",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "0",
+    "denominator": "0"
+  },
+  "events": {
+    "total": 0,
+    "byQuality": {
+      "verified": 0,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 0,
+      "codex": 0
+    }
+  },
+  "modelCalls": 0,
+  "turns": {
+    "claude": 0,
+    "codex": 0
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {
+    "blank_line": 2,
+    "malformed_json": 4,
+    "truncated_line": 1,
+    "files_empty": 1,
+    "ignored_non_jsonl": 1,
+    "compressed_unsupported": 1,
+    "codex_session_unidentified": 1
+  },
+  "counters": {
+    "ignored_record_kind": 1,
+    "rowsRead": 14,
+    "rowsRecognised": 2
+  },
+  "byDay": {},
+  "complete": false
+}

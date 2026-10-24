@@ -1,0 +1,7 @@
+﻿{"type":"user","uuid":"D22-bom-meta-row","timestamp":"2026-10-14T10:00:00Z","sessionId":"D22-session","cwd":"/synthetic/m3/app","message":{"role":"user","content":"Synthetic injected context."},"isMeta":true}
+ 	
+{"synthetic":
+{"type":"summary","timestamp":"2026-10-14T10:00:01Z","summary":"Synthetic ignored record."}
+﻿{"type":"user","uuid":"D22-interior-bom-meta-row","timestamp":"2026-10-14T10:00:01Z","sessionId":"D22-session","cwd":"/synthetic/m3/app","message":{"role":"user","content":"Synthetic interior BOM."},"isMeta":true}
+{"type":"user","uuid":"D22-later-meta-row","timestamp":"2026-10-14T10:00:02Z","sessionId":"D22-session","cwd":"/synthetic/m3/app","message":{"role":"user","content":"Synthetic later injected context."},"isMeta":true}
+{"type":"assistant"

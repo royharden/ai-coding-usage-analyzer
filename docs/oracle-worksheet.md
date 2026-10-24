@@ -367,3 +367,111 @@ Complete true. No accounting-control tag is asserted for this ordering-only case
 The M2 cases remain source/static construction. Invalid-input rejection, retry digest privacy, five report groupings,
 export formatting and all runtime comparisons belong to their source tests and deferred activation, not these oracle
 claims. Long-line/invalid-UTF8 intake cases remain assigned to D23 by TRAPS.md; no such data was added in M2.
+
+## M3 append: D19-D22
+
+Same author, 2026-10-24. Backup before appending: outer
+`agentops/backups/m3-fixtures/oracle-worksheet.before-m3.0651.md`. D01-D18 bytes are preserved unchanged.
+These four cases use UTC with no date filter, the same synthetic dev prices and the same five-bucket order above.
+All emitted events are verified; all observed-quality buckets, unresolved maps and retry populations are zero.
+No schema roots were added for recap, formatting, groupings or session duration. Those require direct source assertions;
+these oracles supply exact inputs and scored accounting populations, not executed UI/security/formatting claims.
+
+### D19: exact rounding boundaries, tiny cost and zero event
+
+| Contribution | Buckets | Cost, millions of pico |
+|---|---|---|
+| Claude A read-nine | (0,1,0,0,9) | 10+9 = 19 |
+| Claude B read-thirty | (0,0,0,0,30) | 30×0.1 = 3 |
+| Claude B tiny | (11,0,0,0,0) | 11 |
+| Claude A zero, separate zero session/project | (0,0,0,0,0) | 0 |
+| GPT X self-proving first [350,10,18,0,0] | (340,18,0,0,10) | 340+72+5 = 417 |
+
+Sum **(351,19,0,0,49)**, **450,000,000 pico**, five events (Claude 4, Codex 1); cache **49/400**.
+The fraction is exactly **12.25%**, so one decimal half-up is **12.3%**. Aggregate cost is exactly **$0.00045**,
+so four-decimal half-up is **$0.0005**; rounding must occur once after exact aggregation. The three positive Claude
+costs are each below $0.00005 and format as `< $0.0001`; zero remains exact zero, with zero-session cache denominator
+zero (`n/a`). A zero-usage ordinary terminal assistant is still one verified model call, not an empty import.
+Rows read/recognised **7/7**, Codex turns **1**, other turns/tools/counters zero; both completeness flags true.
+One byDay entry Oct 14 holds all totals. Cached input is subtracted from Codex input, so the naive cached-not-subtracted
+control must differ. The admitted rounding traps score the raw exact fraction/money; their rendered strings and recap
+zero-context behavior remain direct test assertions.
+
+### D20: multiple grouping dimensions, duration and basename collision
+
+Claude main session in `/synthetic/alpha/app`: user at Oct 14 09:59, event **(2,1,0,0,1)** at 10:00 (cost **15** million),
+event **(1,1,0,0,0)** at 10:02 (cost **12** million). Main recognised duration is **180,000 ms**.
+Claude sidechain session in `/synthetic/beta/app`: user at Oct 15 11:58 and Claude B event **(3,1,0,0,0)** at 11:59,
+cost **8** million; duration **60,000 ms**. The sidechain event is copied byte-for-byte in a second file but counts once,
+with `claude_duplicate_rows=1`. Two Claude user turns total.
+Codex shares the alpha project: meta Oct 15 12:00, first context 12:00:01, self-proving total [10,2,3,0,0] at 12:01,
+second distinct context/turn at 12:03. Emit **(8,3,0,0,2)**, cost **8+12+1 = 21** million; two Codex turns; recognised
+duration **180,000 ms** includes the later context.
+
+Sum **(14,6,0,0,3)**, **56,000,000 pico**, four events (Claude 3 / Codex 1), cache **3/17**;
+rows read/recognised **10/10**, turns **2/2**, no tools. Oct 14: **(3,2,0,0,1)**, 27 million, two events;
+Oct 15: **(11,4,0,0,2)**, 29 million, two events. Both completeness flags true.
+The fixture supplies two days, two projects with basename `app`, three sessions, three models and two agents. Direct
+report/export tests must assert all five grouping families, correct per-group totals, basename ordinal suffixes and
+duration; the frozen fixture schema cannot score those fields. No invented grouping/duration trap is claimed.
+The admitted day, sidechain and cross-file-copy traps are visible in scored fields, and the extra copy separates the
+accounting control.
+
+### D21: hostile values retained in scored populations
+
+| Message | Identity/model facts | Buckets / price outcome |
+|---|---|---|
+| known | message.id __proto__, request constructor, session constructor, formula/Markdown/HTML cwd | (2,1,0,0,1), Claude A known **15 million** |
+| proto-model | message.id constructor, request __proto__, session/model __proto__; identical extra file copy | (3,2,0,0,2), unknown no_price_row once |
+| constructor-model | SVG/Markdown message id, tab+@ session/cwd, model constructor | (1,0,1,0,0), unknown no_price_row |
+| markup-model | Markdown/HTML identity, @synthetic\|[x]*_<b> model, whitespace+@ formula basename with img text | (4,1,0,0,1), unknown no_price_row |
+
+Sum **(10,4,1,0,4)**, **15,000,000 known pico**, four Claude events; cache **4/15**. Unknown tokens
+**(8,3,1,0,3)** over **3** no_price_row events, by exact model keys `__proto__`, `constructor`, and
+`@synthetic|[x]*_<b>` (one each). Accounting complete true; cost complete false. All totals display on Oct 14 UTC.
+
+Five tools: `__proto__`, `constructor`, `=SUM(1,2)|[x]*_<b>`, `mcp__constructor__tool`,
+and `<img src=x onerror=alert(1)>|[*]_` followed by a backtick and `#`, one each. MCP server map contains
+`constructor:1` as a subset. Tool input includes own `__proto__` and nested constructor/prototype keys with synthetic
+values. Two explicit successes, one explicit error, one unflagged result, and one absent result yield
+**error 1 / ok 2 / unknown 2**. The duplicated proto-model row includes a copied tool id: usage duplicate **1**, tool-use
+duplicate **1**. A plain user uuid `__proto__` is one turn. Rows read/recognised **9/9**; retries zero.
+
+These values are text data only; no real identity, path, key or network target is planted. Their contributions exercise
+safe map identity retention. The `hostile-strings` trap scores retained counts and unknown-model keys; it does not prove
+React/DOM, CSV defanging, Markdown escaping, prototype integrity or serializer allowlisting. `safe-exports` is deliberately
+not tagged as a fixture accounting claim: those behaviors remain direct M3 assertions using this material.
+
+### D22: intake faults and empty/zero report context
+
+Claude `intake.jsonl` has seven L1 lines, no trailing newline:
+
+1. File-leading UTF-8 BOM plus valid isMeta user: BOM stripped, recognised, no turn/event.
+2. Spaces/tab only: blank_line.
+3. Terminated malformed JSON: malformed_json.
+4. Valid timestamped summary: ignored_record_kind.
+5. Interior BOM plus otherwise valid isMeta user: malformed_json (only file-leading BOM is stripped).
+6. Valid isMeta user: recognised, no turn/event.
+7. Malformed final unterminated assistant prefix: truncated_line.
+
+The empty JSONL file adds files_empty **1**; readme.txt adds ignored_non_jsonl **1**; archive.jsonl.zst adds
+compressed_unsupported **1** before reading (its ASCII placeholder is deliberately not a real compressed archive).
+These three files contribute no lines.
+
+Codex `unidentified.jsonl` has seven terminated lines: two unrelated session_meta ids with no filename UUID, one
+malformed JSON line, one blank, one timestamp-free empty-info token record, one timestamp-free unsupported record,
+and JSON array `[]`. Session identity is not unique. File skip codex_session_unidentified **1**; only L2/L3/blank/L4
+apply inside it. Thus malformed_json **2**, blank_line **1**, and the other **4** parsed object lines are removed from
+recognised rows by the file skip. No bad_timestamp, ignored-kind or empty-info counter is manufactured there.
+
+Combined skips: **blank_line 2, malformed_json 4, truncated_line 1, files_empty 1, ignored_non_jsonl 1,
+compressed_unsupported 1, codex_session_unidentified 1**. Counters: ignored_record_kind **1**, rowsRead **14**,
+rowsRecognised **2** (14−2 blank−4 malformed−1 truncated−1 ignored−4 unidentified remaining).
+Every token/cost/event/model-call/turn/tool/result/retry/unknown/unresolved population is zero; `byDay={}`;
+cache exact fraction **0/0**. Accounting complete false because usage may be hidden by intake skips; cost complete true
+because there are no emitted unknown-priced events. This is an empty emitted population with zero recap context,
+distinct from D19's one emitted zero-usage event. Recap rendering remains directly asserted outside this schema.
+No invalid UTF-8, very long line or overlong identity is planted; those remain D23/M4.
+
+M3 construction uses only static file/JSON/key/encoding inspection. None of the formatting, recap, export safety,
+browser states, baseline separation or analyzer outcomes above has been executed or scored.

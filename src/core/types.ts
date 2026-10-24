@@ -70,6 +70,8 @@ export type MetricValue = { kind: 'count'; value: number } | { kind: 'tokens' | 
   { kind: 'ratio'; numerator: bigint; denominator: bigint } | { kind: 'coverage'; known: number; total: number } |
   { kind: 'unavailable'; value: 'not available' };
 export interface SessionDuration { agent: Agent; sessionId: string; firstMs: number; lastMs: number; durationMs: number; label: 'within filter' }
+export interface CheckedRecap { text: string; spans: { start: number; end: number; metricId: string }[] }
+export type RecapStatus = { ok: true } | { ok: false; reason: string };
 /** Report owns only safe aggregates. It contains neither raw events/tools nor retry hashes or default project paths. */
 export interface Report {
   schema: 's22-report/1';
@@ -85,6 +87,7 @@ export interface Report {
   skipped: Map<SkipCode, number>; unresolved: Map<UnresolvedCode, number>; counters: Map<CounterCode, number>;
   evidence: { category: Diagnostic['category']; code: Diagnostic['code']; sourceRef: SourceRef }[];
   metricTable: Map<string, MetricValue>;
-  /** M3 adds checked recap segments; absent throughout M2. */
-  recap?: { text: string; spans: { start: number; end: number; metricId: string }[] };
+  /** The serializer independently verifies this candidate before projecting it. */
+  recap?: CheckedRecap;
+  recapStatus: RecapStatus;
 }

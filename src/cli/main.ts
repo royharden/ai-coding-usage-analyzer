@@ -6,6 +6,7 @@ import { toJson } from '../core/exports/json';
 import { toCsv } from '../core/exports/csv';
 import { toMarkdown } from '../core/exports/md';
 import { formatUsd } from '../core/money';
+import { serializeReport } from '../core/serialize';
 import { checkSizeBudget, SizeBudgetError } from '../core/sizeBudget';
 import type { Report } from '../core/types';
 import { nodePlatform } from '../node/platform';
@@ -32,7 +33,9 @@ export function toTable(report: Report): string {
     `Unknown-price events: ${report.cost.unknownPriceEvents.total} (${counts(report.cost.unknownPriceEvents.byReason)})`,
     `Unknown-price models: ${counts(report.cost.unknownPriceEvents.byModel)}`,
     `Unresolved usage: ${counts(report.unresolved)}`, `Skipped: ${counts(report.skipped)}`, `Counters: ${counts(report.counters)}`);
-  if (report.recap) lines.push(cell(report.recap.text));
+  const checked = serializeReport(report);
+  if (checked.recapStatus.ok && checked.recap) lines.push(`Recap (checked): ${checked.recap.text}`);
+  else if (!checked.recapStatus.ok) lines.push(checked.recapStatus.reason);
   return `${lines.join('\n')}\n`;
 }
 

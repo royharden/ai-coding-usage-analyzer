@@ -1,4 +1,7 @@
 import { metricDefs } from './metricDefs';
+import { makeMetricTable } from './metrics';
+import { checkedRecap } from './recap';
+import { recapCheck, RECAP_FAILURE_REASON } from './recapCheck';
 import type { Buckets, GroupRow, MetricValue, Report } from './types';
 
 /** Explicit fields, never spread an imported record or a transient event/tool object into output. */
@@ -29,6 +32,21 @@ function metric(value: MetricValue) {
 /** This is also the worker-safe report projection. Retry hashes never enter this boundary. */
 // rule 4.7
 export function serializeReport(report: Report) {
+  // rule 4.6: recheck at the boundary, even if a caller altered the candidate after analyze.
+  // The retained table can be stale if an aggregate was changed after analyze.
+  // Derive one boundary table from the fields being serialized, then use it everywhere below.
+  const currentMetrics = makeMetricTable(report);
+  const expected = checkedRecap(currentMetrics).recap;
+  const canonical = expected && report.recap && expected.text === report.recap.text &&
+    expected.spans.length === report.recap.spans.length && expected.spans.every((span, index) => {
+      const candidate = report.recap?.spans[index];
+      return candidate?.start === span.start && candidate.end === span.end && candidate.metricId === span.metricId;
+    });
+  const recapStatus = canonical && report.recap && report.recapStatus?.ok === true
+    ? recapCheck(report.recap.text, report.recap.spans, currentMetrics)
+    : { ok: false as const, reason: RECAP_FAILURE_REASON };
+  const recap = recapStatus.ok && report.recap ? { text: report.recap.text,
+    spans: report.recap.spans.map(span => ({ start: span.start, end: span.end, metricId: span.metricId })) } : undefined;
   const result = {
     schema: report.schema,
     metadata: { tz: report.metadata.tz, since: report.metadata.since, until: report.metadata.until,
@@ -62,10 +80,11 @@ export function serializeReport(report: Report) {
     evidence: report.evidence.map(item => ({ category: item.category, code: item.code,
       sourceRef: { fileId: item.sourceRef.fileId, line: item.sourceRef.line } })),
     metricTable: Object.fromEntries(Object.keys(metricDefs).flatMap(id => {
-      const value = report.metricTable.get(id); return value ? [[id, metric(value)]] : [];
+      const value = currentMetrics.get(id); return value ? [[id, metric(value)]] : [];
     })),
+    recapStatus,
+    ...(recap ? { recap } : {}),
   };
-  // Recap is absent until M3 installs the checked renderer; no transient extra fields are accepted.
   return result;
 }
 export type SerializedReport = ReturnType<typeof serializeReport>;

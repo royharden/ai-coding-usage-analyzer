@@ -86,10 +86,11 @@ describe('intake safety, counters and report boundary', () => {
     expect(value.skipped.get('malformed_json')).toBe(1); expect(value.skipped.get('codex_session_unidentified')).toBe(1);
     expect(value.skipped.has('bad_timestamp')).toBe(false);
   });
-  it('global tiny metadata cap is visibly incomplete and no recap or raw transient collections reach Report', async () => {
+  it('global tiny metadata cap is visibly incomplete with a checked aggregate recap and no raw transient collections', async () => {
     const value = await report([source('claude', [assistant()])], { metadataCap: 0 });
     expect(value.unresolved.get('metadata_cap_reached')).toBe(1); expect(value.complete).toBe(false);
-    expect(value).not.toHaveProperty('recap'); expect(value).not.toHaveProperty('toolFacts'); expect(value).not.toHaveProperty('eventsRaw');
+    expect(value.recapStatus).toEqual({ ok: true }); expect(value.recap?.text).toContain('Unresolved usage groups or steps: 1');
+    expect(value).not.toHaveProperty('toolFacts'); expect(value).not.toHaveProperty('eventsRaw');
   });
   it('price digest hashes the raw table text once, not the parsed row order or log data', async () => {
     const hashes: string[] = [];
