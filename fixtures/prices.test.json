@@ -1,0 +1,49 @@
+{
+  "schema": "pricetable/1",
+  "currency": "USD",
+  "unit": "micro_usd_per_mtok",
+  "rows": [
+    {
+      "model": "claude-test-a",
+      "effective_from": "2026-06-01T00:00:00Z",
+      "input": 2000000,
+      "output": 10000000,
+      "cache_write_5m": 3000000,
+      "cache_write_1h": 4000000,
+      "cache_read": 1000000,
+      "source_url": "https://example.invalid/s22-synthetic-prices",
+      "retrieved": "2026-10-24"
+    },
+    {
+      "model": "claude-test-a",
+      "effective_from": "2026-10-15T12:00:00Z",
+      "input": 4000000,
+      "output": 20000000,
+      "cache_write_5m": 6000000,
+      "cache_write_1h": 8000000,
+      "cache_read": 2000000,
+      "source_url": "https://example.invalid/s22-synthetic-prices",
+      "retrieved": "2026-10-24"
+    },
+    {
+      "model": "claude-test-b",
+      "effective_from": "2026-06-01T00:00:00Z",
+      "input": 1000000,
+      "output": 5000000,
+      "cache_write_5m": 2000000,
+      "cache_read": 100000,
+      "max_input_tokens_per_call": 200000,
+      "source_url": "https://example.invalid/s22-synthetic-prices",
+      "retrieved": "2026-10-24"
+    },
+    {
+      "model": "gpt-test-x",
+      "effective_from": "2026-06-01T00:00:00Z",
+      "input": 1000000,
+      "output": 4000000,
+      "cache_read": 500000,
+      "source_url": "https://example.invalid/s22-synthetic-prices",
+      "retrieved": "2026-10-24"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+.vite/
+# never commit real agent logs or smoke-run output
+smoke/
+*.local.json
+.env
+.env.*
+!.env.example

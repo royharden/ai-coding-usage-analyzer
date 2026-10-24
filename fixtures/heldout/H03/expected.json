@@ -1,0 +1,139 @@
+{
+  "schema": "s22-expected/1",
+  "id": "H03",
+  "tz": "Asia/Kolkata",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/heldout/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "cache-split-mismatch",
+    "assumed-5m",
+    "synthetic-error",
+    "missing-identity",
+    "bad-count",
+    "bad-timestamp",
+    "civil-day"
+  ],
+  "tokens": {
+    "input": "160",
+    "output": "103",
+    "cacheWrite5m": "4000",
+    "cacheWrite1h": "0",
+    "cacheRead": "12000"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "160",
+      "output": "103",
+      "cacheWrite5m": "4000",
+      "cacheWrite1h": "0",
+      "cacheRead": "12000"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "25350000000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "12000",
+    "denominator": "16160"
+  },
+  "events": {
+    "total": 5,
+    "byQuality": {
+      "verified": 5,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 5,
+      "codex": 0
+    }
+  },
+  "modelCalls": 5,
+  "turns": {
+    "claude": 1,
+    "codex": 0
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {
+    "cache_split_mismatch": 1,
+    "no_identity": 1
+  },
+  "skipped": {
+    "synthetic_or_error_row": 3,
+    "bad_count": 1,
+    "bad_timestamp": 1
+  },
+  "counters": {
+    "rowsRead": 13,
+    "rowsRecognised": 8,
+    "assumed5m": 1,
+    "synthetic_nonzero_usage": 1
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "140",
+        "output": "93",
+        "cacheWrite5m": "4000",
+        "cacheWrite1h": "0",
+        "cacheRead": "8000"
+      },
+      "knownPico": "21210000000",
+      "events": 4
+    },
+    "2026-10-15": {
+      "tokens": {
+        "input": "20",
+        "output": "10",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "4000"
+      },
+      "knownPico": "4140000000",
+      "events": 1
+    }
+  },
+  "complete": false
+}

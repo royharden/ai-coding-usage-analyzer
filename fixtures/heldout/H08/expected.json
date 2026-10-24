@@ -1,0 +1,139 @@
+{
+  "schema": "s22-expected/1",
+  "id": "H08",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/heldout/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "fork-unproven",
+    "missing-session-meta",
+    "ambiguous-tier",
+    "cache-write-unmodeled",
+    "reasoning-exceeds-output",
+    "incomparable-tie",
+    "ambiguous-context",
+    "empty-token-count"
+  ],
+  "tokens": {
+    "input": "5800",
+    "output": "610",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "3000"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "3500",
+      "output": "190",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "300"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "2300",
+      "output": "420",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "2700"
+    }
+  },
+  "cost": {
+    "knownPico": "7020000000",
+    "unknownPriceTokens": {
+      "input": "1900",
+      "output": "130",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "600"
+    },
+    "unknownPriceEvents": {
+      "total": 2,
+      "byReason": {
+        "tier_unsupported": 1,
+        "no_price_row": 1
+      },
+      "byModel": {
+        "gpt-test-x": 1,
+        "unknown": 1
+      }
+    },
+    "complete": false
+  },
+  "cacheHit": {
+    "numerator": "3000",
+    "denominator": "8800"
+  },
+  "events": {
+    "total": 7,
+    "byQuality": {
+      "verified": 3,
+      "observed_snapshot": 0,
+      "observed_epoch": 4
+    },
+    "byAgent": {
+      "claude": 0,
+      "codex": 7
+    }
+  },
+  "modelCalls": 7,
+  "turns": {
+    "claude": 0,
+    "codex": 7
+  },
+  "tools": {
+    "total": 1,
+    "byName": {
+      "shell": 1
+    },
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {
+    "codex_fork_unproven_prefix": 1,
+    "codex_session_meta_missing": 1,
+    "codex_cache_write_unmodeled": 1,
+    "codex_reasoning_exceeds_output": 1,
+    "codex_ambiguous_order": 1,
+    "codex_ambiguous_context": 1
+  },
+  "skipped": {},
+  "counters": {
+    "rowsRead": 32,
+    "rowsRecognised": 31,
+    "codex_token_count_empty": 1,
+    "codex_embedded_parent_meta": 1,
+    "codex_fork_history_unverified": 1,
+    "baseline_reset_assumed": 3
+  },
+  "byDay": {
+    "2026-10-20": {
+      "tokens": {
+        "input": "5800",
+        "output": "610",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "3000"
+      },
+      "knownPico": "7020000000",
+      "events": 7
+    }
+  },
+  "complete": false
+}

@@ -1,0 +1,138 @@
+{
+  "schema": "s22-expected/1",
+  "id": "H04",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/heldout/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "price-change",
+    "unknown-model",
+    "unsupported-modifier",
+    "long-context",
+    "missing-rate",
+    "unknown-price-precedence"
+  ],
+  "tokens": {
+    "input": "75610",
+    "output": "900",
+    "cacheWrite5m": "500",
+    "cacheWrite1h": "700",
+    "cacheRead": "759300"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "75610",
+      "output": "900",
+      "cacheWrite5m": "500",
+      "cacheWrite1h": "700",
+      "cacheRead": "759300"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "40460000000",
+    "unknownPriceTokens": {
+      "input": "62910",
+      "output": "600",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "700",
+      "cacheRead": "567900"
+    },
+    "unknownPriceEvents": {
+      "total": 9,
+      "byReason": {
+        "no_price_row": 3,
+        "tier_unsupported": 5,
+        "rate_missing": 1
+      },
+      "byModel": {
+        "claude-test-z": 1,
+        "claude-test-b": 6,
+        "gpt-test-unpriced": 1,
+        "gpt-test-x": 1
+      }
+    },
+    "complete": false
+  },
+  "cacheHit": {
+    "numerator": "759300",
+    "denominator": "836110"
+  },
+  "events": {
+    "total": 14,
+    "byQuality": {
+      "verified": 14,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 11,
+      "codex": 3
+    }
+  },
+  "modelCalls": 14,
+  "turns": {
+    "claude": 1,
+    "codex": 2
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {},
+  "counters": {
+    "rowsRead": 20,
+    "rowsRecognised": 20
+  },
+  "byDay": {
+    "2026-05-31": {
+      "tokens": {
+        "input": "10",
+        "output": "10",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "0"
+      },
+      "knownPico": "0",
+      "events": 1
+    },
+    "2026-10-15": {
+      "tokens": {
+        "input": "75600",
+        "output": "890",
+        "cacheWrite5m": "500",
+        "cacheWrite1h": "700",
+        "cacheRead": "759300"
+      },
+      "knownPico": "40460000000",
+      "events": 13
+    }
+  },
+  "complete": true
+}

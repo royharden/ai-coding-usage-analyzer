@@ -1,0 +1,636 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/s22-expected-1.schema.json",
+  "title": "S22 hand-computed exact fixture oracle",
+  "type": "object",
+  "properties": {
+    "schema": {
+      "const": "s22-expected/1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[DH][0-9]{2}$"
+    },
+    "tz": {
+      "type": "string",
+      "minLength": 1
+    },
+    "since": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "until": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+    },
+    "prices": {
+      "enum": [
+        "fixtures/prices.test.json",
+        "fixtures/heldout/prices.test.json"
+      ]
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "accounting-control"
+        ]
+      },
+      "uniqueItems": true
+    },
+    "traps": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "cache-buckets",
+          "reasoning-inside-output",
+          "cumulative-delta",
+          "stream-terminal",
+          "stream-identical",
+          "same-message-two-files",
+          "sidechain-once",
+          "nonterminal-snapshot",
+          "conflicting-duplicates",
+          "missing-request-merge",
+          "missing-request-conflict",
+          "attribution-copy",
+          "cache-split-mismatch",
+          "assumed-5m",
+          "synthetic-error",
+          "missing-identity",
+          "bad-count",
+          "bad-timestamp",
+          "civil-day",
+          "price-change",
+          "unknown-model",
+          "unsupported-modifier",
+          "long-context",
+          "missing-rate",
+          "unknown-price-precedence",
+          "inclusive-filter",
+          "pre-window-baseline",
+          "filtered-diagnostics",
+          "out-of-order",
+          "split-session",
+          "duplicate-copy",
+          "repeated-total",
+          "last-delta-mismatch",
+          "regression-epoch",
+          "cached-exceeds-input",
+          "fork-prefix",
+          "embedded-parent-meta",
+          "fork-tool-turn-replay",
+          "fork-zero-start",
+          "fork-unproven",
+          "missing-session-meta",
+          "ambiguous-tier",
+          "cache-write-unmodeled",
+          "reasoning-exceeds-output",
+          "incomparable-tie",
+          "ambiguous-context",
+          "tools-mcp",
+          "explicit-error",
+          "canonical-retry",
+          "no-retry-after-success",
+          "subagent-retry-isolation",
+          "status-conflict",
+          "orphan-result",
+          "turn-meta-exclusion",
+          "missing-turn-identity",
+          "hostile-strings",
+          "bom",
+          "blank-line",
+          "malformed-line",
+          "truncated-final",
+          "empty-file",
+          "non-jsonl",
+          "compressed-unsupported",
+          "unidentified-session",
+          "empty-token-count",
+          "very-long-line",
+          "invalid-utf8",
+          "model-conflict",
+          "inherited-start",
+          "timestamp-context-switch",
+          "field-limit",
+          "metadata-cap",
+          "cache-hit-rounding",
+          "money-rounding",
+          "safe-exports",
+          "dst",
+          "price-validation",
+          "missing-fields",
+          "retry-ambiguous-order"
+        ]
+      },
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "tokens": {
+      "$ref": "#/$defs/tokens"
+    },
+    "tokensByQuality": {
+      "type": "object",
+      "properties": {
+        "verified": {
+          "$ref": "#/$defs/tokens"
+        },
+        "observed_snapshot": {
+          "$ref": "#/$defs/tokens"
+        },
+        "observed_epoch": {
+          "$ref": "#/$defs/tokens"
+        }
+      },
+      "required": [
+        "verified",
+        "observed_snapshot",
+        "observed_epoch"
+      ],
+      "additionalProperties": false
+    },
+    "cost": {
+      "type": "object",
+      "properties": {
+        "knownPico": {
+          "$ref": "#/$defs/decimal"
+        },
+        "unknownPriceTokens": {
+          "$ref": "#/$defs/tokens"
+        },
+        "unknownPriceEvents": {
+          "type": "object",
+          "properties": {
+            "total": {
+              "$ref": "#/$defs/count"
+            },
+            "byReason": {
+              "$ref": "#/$defs/unknownReasons"
+            },
+            "byModel": {
+              "$ref": "#/$defs/counts"
+            }
+          },
+          "required": [
+            "total",
+            "byReason",
+            "byModel"
+          ],
+          "additionalProperties": false
+        },
+        "complete": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "knownPico",
+        "unknownPriceTokens",
+        "unknownPriceEvents",
+        "complete"
+      ],
+      "additionalProperties": false
+    },
+    "cacheHit": {
+      "type": "object",
+      "properties": {
+        "numerator": {
+          "$ref": "#/$defs/decimal"
+        },
+        "denominator": {
+          "$ref": "#/$defs/decimal"
+        }
+      },
+      "required": [
+        "numerator",
+        "denominator"
+      ],
+      "additionalProperties": false
+    },
+    "events": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "$ref": "#/$defs/count"
+        },
+        "byQuality": {
+          "$ref": "#/$defs/qualityCounts"
+        },
+        "byAgent": {
+          "$ref": "#/$defs/agentCounts"
+        }
+      },
+      "required": [
+        "total",
+        "byQuality",
+        "byAgent"
+      ],
+      "additionalProperties": false
+    },
+    "modelCalls": {
+      "$ref": "#/$defs/count"
+    },
+    "turns": {
+      "$ref": "#/$defs/agentCounts"
+    },
+    "tools": {
+      "type": "object",
+      "properties": {
+        "total": {
+          "$ref": "#/$defs/count"
+        },
+        "byName": {
+          "$ref": "#/$defs/counts"
+        },
+        "byMcpServer": {
+          "$ref": "#/$defs/counts"
+        }
+      },
+      "required": [
+        "total",
+        "byName",
+        "byMcpServer"
+      ],
+      "additionalProperties": false
+    },
+    "toolResults": {
+      "type": "object",
+      "properties": {
+        "error": {
+          "$ref": "#/$defs/count"
+        },
+        "ok": {
+          "$ref": "#/$defs/count"
+        },
+        "unknown": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [
+        "error",
+        "ok",
+        "unknown"
+      ],
+      "additionalProperties": false
+    },
+    "retries": {
+      "$ref": "#/$defs/count"
+    },
+    "retryAmbiguous": {
+      "$ref": "#/$defs/count"
+    },
+    "unresolved": {
+      "$ref": "#/$defs/unresolved"
+    },
+    "skipped": {
+      "$ref": "#/$defs/skips"
+    },
+    "counters": {
+      "$ref": "#/$defs/counters"
+    },
+    "byDay": {
+      "type": "object",
+      "patternProperties": {
+        "^[0-9]{4}-[0-9]{2}-[0-9]{2}$": {
+          "type": "object",
+          "properties": {
+            "tokens": {
+              "$ref": "#/$defs/tokens"
+            },
+            "knownPico": {
+              "$ref": "#/$defs/decimal"
+            },
+            "events": {
+              "$ref": "#/$defs/count"
+            }
+          },
+          "required": [
+            "tokens",
+            "knownPico",
+            "events"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "complete": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema",
+    "id",
+    "tz",
+    "since",
+    "until",
+    "prices",
+    "tags",
+    "traps",
+    "tokens",
+    "tokensByQuality",
+    "cost",
+    "cacheHit",
+    "events",
+    "modelCalls",
+    "turns",
+    "tools",
+    "toolResults",
+    "retries",
+    "retryAmbiguous",
+    "unresolved",
+    "skipped",
+    "counters",
+    "byDay",
+    "complete"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "count": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "decimal": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)$"
+    },
+    "tokens": {
+      "type": "object",
+      "properties": {
+        "input": {
+          "$ref": "#/$defs/decimal"
+        },
+        "output": {
+          "$ref": "#/$defs/decimal"
+        },
+        "cacheWrite5m": {
+          "$ref": "#/$defs/decimal"
+        },
+        "cacheWrite1h": {
+          "$ref": "#/$defs/decimal"
+        },
+        "cacheRead": {
+          "$ref": "#/$defs/decimal"
+        }
+      },
+      "required": [
+        "input",
+        "output",
+        "cacheWrite5m",
+        "cacheWrite1h",
+        "cacheRead"
+      ],
+      "additionalProperties": false
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/count"
+      }
+    },
+    "qualityCounts": {
+      "type": "object",
+      "properties": {
+        "verified": {
+          "$ref": "#/$defs/count"
+        },
+        "observed_snapshot": {
+          "$ref": "#/$defs/count"
+        },
+        "observed_epoch": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [
+        "verified",
+        "observed_snapshot",
+        "observed_epoch"
+      ],
+      "additionalProperties": false
+    },
+    "agentCounts": {
+      "type": "object",
+      "properties": {
+        "claude": {
+          "$ref": "#/$defs/count"
+        },
+        "codex": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [
+        "claude",
+        "codex"
+      ],
+      "additionalProperties": false
+    },
+    "skips": {
+      "type": "object",
+      "properties": {
+        "line_too_long": {
+          "$ref": "#/$defs/count"
+        },
+        "invalid_utf8": {
+          "$ref": "#/$defs/count"
+        },
+        "malformed_json": {
+          "$ref": "#/$defs/count"
+        },
+        "truncated_line": {
+          "$ref": "#/$defs/count"
+        },
+        "bad_count": {
+          "$ref": "#/$defs/count"
+        },
+        "bad_timestamp": {
+          "$ref": "#/$defs/count"
+        },
+        "field_too_long": {
+          "$ref": "#/$defs/count"
+        },
+        "blank_line": {
+          "$ref": "#/$defs/count"
+        },
+        "synthetic_or_error_row": {
+          "$ref": "#/$defs/count"
+        },
+        "files_empty": {
+          "$ref": "#/$defs/count"
+        },
+        "compressed_unsupported": {
+          "$ref": "#/$defs/count"
+        },
+        "file_read_error": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_session_unidentified": {
+          "$ref": "#/$defs/count"
+        },
+        "ignored_non_jsonl": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "counters": {
+      "type": "object",
+      "properties": {
+        "ignored_record_kind": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_token_count_empty": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_duplicate_rows": {
+          "$ref": "#/$defs/count"
+        },
+        "duplicate_copy": {
+          "$ref": "#/$defs/count"
+        },
+        "assumed5m": {
+          "$ref": "#/$defs/count"
+        },
+        "request_id_missing": {
+          "$ref": "#/$defs/count"
+        },
+        "request_id_missing_merged": {
+          "$ref": "#/$defs/count"
+        },
+        "synthetic_nonzero_usage": {
+          "$ref": "#/$defs/count"
+        },
+        "turn_identity_missing": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_nonterminal_snapshot": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_attribution_conflict": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_duplicate_tool_use": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_duplicate_turn": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_tool_status_conflict": {
+          "$ref": "#/$defs/count"
+        },
+        "orphan_tool_result": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_repeat_total": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_last_delta_mismatch": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_embedded_parent_meta": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_replay_dropped": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_replay_tool_dropped": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_replay_turn_dropped": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_fork_history_unverified": {
+          "$ref": "#/$defs/count"
+        },
+        "baseline_reset_assumed": {
+          "$ref": "#/$defs/count"
+        },
+        "retry_ambiguous_order": {
+          "$ref": "#/$defs/count"
+        },
+        "rowsRead": {
+          "$ref": "#/$defs/count"
+        },
+        "rowsRecognised": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "unresolved": {
+      "type": "object",
+      "properties": {
+        "cache_split_mismatch": {
+          "$ref": "#/$defs/count"
+        },
+        "request_id_conflict": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_conflicting_duplicates": {
+          "$ref": "#/$defs/count"
+        },
+        "claude_model_conflict": {
+          "$ref": "#/$defs/count"
+        },
+        "no_identity": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_ambiguous_order": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_ambiguous_context": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_cached_exceeds_input": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_cache_write_unmodeled": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_reasoning_exceeds_output": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_total_regressed": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_fork_unproven_prefix": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_inherited_start": {
+          "$ref": "#/$defs/count"
+        },
+        "codex_session_meta_missing": {
+          "$ref": "#/$defs/count"
+        },
+        "metadata_cap_reached": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    },
+    "unknownReasons": {
+      "type": "object",
+      "properties": {
+        "no_price_row": {
+          "$ref": "#/$defs/count"
+        },
+        "tier_unsupported": {
+          "$ref": "#/$defs/count"
+        },
+        "rate_missing": {
+          "$ref": "#/$defs/count"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  }
+}

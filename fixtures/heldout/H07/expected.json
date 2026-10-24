@@ -1,0 +1,122 @@
+{
+  "schema": "s22-expected/1",
+  "id": "H07",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/heldout/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "fork-prefix",
+    "embedded-parent-meta",
+    "fork-tool-turn-replay",
+    "fork-zero-start"
+  ],
+  "tokens": {
+    "input": "4600",
+    "output": "510",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "3200"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "4600",
+      "output": "510",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "3200"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "8240000000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "3200",
+    "denominator": "7800"
+  },
+  "events": {
+    "total": 4,
+    "byQuality": {
+      "verified": 4,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 0,
+      "codex": 4
+    }
+  },
+  "modelCalls": 4,
+  "turns": {
+    "claude": 0,
+    "codex": 4
+  },
+  "tools": {
+    "total": 2,
+    "byName": {
+      "shell": 2
+    },
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {},
+  "counters": {
+    "rowsRead": 27,
+    "rowsRecognised": 27,
+    "codex_embedded_parent_meta": 2,
+    "codex_replay_dropped": 2,
+    "codex_replay_tool_dropped": 4,
+    "codex_replay_turn_dropped": 4
+  },
+  "byDay": {
+    "2026-10-19": {
+      "tokens": {
+        "input": "4600",
+        "output": "510",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "3200"
+      },
+      "knownPico": "8240000000",
+      "events": 4
+    }
+  },
+  "complete": true
+}

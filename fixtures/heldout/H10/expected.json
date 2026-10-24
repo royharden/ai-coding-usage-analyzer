@@ -1,0 +1,133 @@
+{
+  "schema": "s22-expected/1",
+  "id": "H10",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/heldout/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "bom",
+    "blank-line",
+    "malformed-line",
+    "truncated-final",
+    "empty-file",
+    "non-jsonl",
+    "compressed-unsupported",
+    "unidentified-session",
+    "bad-count",
+    "out-of-order"
+  ],
+  "tokens": {
+    "input": "1250",
+    "output": "220",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "900"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "1250",
+      "output": "220",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "900"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "5680000000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "900",
+    "denominator": "2150"
+  },
+  "events": {
+    "total": 4,
+    "byQuality": {
+      "verified": 4,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 2,
+      "codex": 2
+    }
+  },
+  "modelCalls": 4,
+  "turns": {
+    "claude": 1,
+    "codex": 1
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {
+    "blank_line": 1,
+    "malformed_json": 3,
+    "truncated_line": 1,
+    "bad_count": 1,
+    "files_empty": 1,
+    "ignored_non_jsonl": 1,
+    "compressed_unsupported": 1,
+    "codex_session_unidentified": 1,
+    "bad_timestamp": 1
+  },
+  "counters": {
+    "rowsRead": 18,
+    "rowsRecognised": 8,
+    "claude_duplicate_rows": 1
+  },
+  "byDay": {
+    "2026-10-21": {
+      "tokens": {
+        "input": "1250",
+        "output": "220",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "900"
+      },
+      "knownPico": "5680000000",
+      "events": 4
+    }
+  },
+  "complete": false
+}

@@ -1,0 +1,4 @@
+{"timestamp":"2026-10-21T11:00:00.000Z","type":"session_meta","payload":{"id":"0a000000-0000-4000-8000-0000000000f1","timestamp":"2026-10-21T11:00:00.000Z","cwd":"/home/dev/projects/mu","originator":"codex-test","cli_version":"0.0.0-test"}}
+{"timestamp":"2026-10-21T11:00:01.000Z","type":"session_meta","payload":{"id":"0a000000-0000-4000-8000-0000000000f2","timestamp":"2026-10-21T11:00:01.000Z","cwd":"/home/dev/projects/mu","originator":"codex-test","cli_version":"0.0.0-test"}}
+{"timestamp":"2026-10-21T11:00:05.000Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":700,"cached_input_tokens":0,"output_tokens":70,"reasoning_output_tokens":0,"total_tokens":770},"last_token_usage":{"input_tokens":700,"cached_input_tokens":0,"output_tokens":70,"reasoning_output_tokens":0,"total_tokens":770}}}}
+{"timestamp":"2026-10-21T11:00:06.000Z","type":

@@ -1,0 +1,135 @@
+{
+  "schema": "s22-expected/1",
+  "id": "H09",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/heldout/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "tools-mcp",
+    "explicit-error",
+    "canonical-retry",
+    "no-retry-after-success",
+    "subagent-retry-isolation",
+    "status-conflict",
+    "orphan-result",
+    "turn-meta-exclusion",
+    "missing-turn-identity",
+    "hostile-strings"
+  ],
+  "tokens": {
+    "input": "450",
+    "output": "250",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "900"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "450",
+      "output": "250",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "900"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "4300000000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "900",
+    "denominator": "1350"
+  },
+  "events": {
+    "total": 10,
+    "byQuality": {
+      "verified": 10,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 10,
+      "codex": 0
+    }
+  },
+  "modelCalls": 10,
+  "turns": {
+    "claude": 4,
+    "codex": 0
+  },
+  "tools": {
+    "total": 10,
+    "byName": {
+      "Bash": 4,
+      "mcp__docs__search": 2,
+      "mcp__docs__fetch": 1,
+      "Read": 2,
+      "Write": 1
+    },
+    "byMcpServer": {
+      "docs": 3
+    }
+  },
+  "toolResults": {
+    "error": 2,
+    "ok": 5,
+    "unknown": 3
+  },
+  "retries": 2,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {},
+  "counters": {
+    "rowsRead": 28,
+    "rowsRecognised": 28,
+    "claude_duplicate_rows": 1,
+    "claude_duplicate_tool_use": 1,
+    "claude_tool_status_conflict": 1,
+    "orphan_tool_result": 1,
+    "turn_identity_missing": 1
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "450",
+        "output": "250",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "900"
+      },
+      "knownPico": "4300000000",
+      "events": 10
+    }
+  },
+  "complete": true
+}
