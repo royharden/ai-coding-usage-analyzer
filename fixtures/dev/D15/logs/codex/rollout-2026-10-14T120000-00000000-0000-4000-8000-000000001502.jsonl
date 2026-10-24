@@ -1,0 +1,9 @@
+{"timestamp":"2026-10-14T12:01:00Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000001502","cwd":"/synthetic/m2-codex","forked_from_id":"00000000-0000-4000-8000-000000001501"}}
+{"timestamp":"2026-10-14T12:01:01Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000001501","cwd":"/synthetic/m2-codex"}}
+{"timestamp":"2026-10-14T12:01:02Z","type":"turn_context","payload":{"turn_id":"d15-parent-turn","model":"gpt-test-x","cwd":"/synthetic/m2-codex"}}
+{"timestamp":"2026-10-14T12:01:03Z","type":"response_item","payload":{"type":"function_call","call_id":"d15-parent-call","name":"mcp__forge__search","arguments":"{\"query\":\"synthetic\"}"}}
+{"timestamp":"2026-10-14T12:01:04Z","type":"response_item","payload":{"type":"function_call_output","call_id":"d15-parent-call","output":"{\"exit_code\":1,\"text\":\"synthetic failure-looking text\"}"}}
+{"timestamp":"2026-10-14T12:01:05Z","type":"turn_context","payload":{"turn_id":"d15-child-turn","model":"gpt-test-x","cwd":"/synthetic/m2-codex"}}
+{"timestamp":"2026-10-14T12:01:06Z","type":"response_item","payload":{"type":"custom_tool_call","call_id":"d15-child-call","name":"exec_command","input":"Synthetic command input."}}
+{"timestamp":"2026-10-14T12:01:07Z","type":"response_item","payload":{"type":"custom_tool_call_output","call_id":"d15-child-call","output":"{\"exit_code\":1}"}}
+{"timestamp":"2026-10-14T12:01:08Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":7,"cached_input_tokens":1,"output_tokens":3,"reasoning_output_tokens":1,"cache_write_input_tokens":0,"total_tokens":10},"last_token_usage":{"input_tokens":7,"cached_input_tokens":1,"output_tokens":3,"reasoning_output_tokens":1,"cache_write_input_tokens":0,"total_tokens":10}},"turn_id":"d15-child-turn"}}

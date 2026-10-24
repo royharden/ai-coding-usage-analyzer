@@ -1,0 +1,125 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D15",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "tools-mcp",
+    "explicit-error",
+    "fork-tool-turn-replay"
+  ],
+  "tokens": {
+    "input": "17",
+    "output": "9",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "3"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "17",
+      "output": "9",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "3"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "69500000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "3",
+    "denominator": "20"
+  },
+  "events": {
+    "total": 4,
+    "byQuality": {
+      "verified": 4,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 2,
+      "codex": 2
+    }
+  },
+  "modelCalls": 4,
+  "turns": {
+    "claude": 0,
+    "codex": 2
+  },
+  "tools": {
+    "total": 5,
+    "byName": {
+      "mcp__forge__search": 2,
+      "Read": 1,
+      "mcp__forge__fetch": 1,
+      "exec_command": 1
+    },
+    "byMcpServer": {
+      "forge": 3
+    }
+  },
+  "toolResults": {
+    "error": 1,
+    "ok": 1,
+    "unknown": 1
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {},
+  "counters": {
+    "codex_embedded_parent_meta": 1,
+    "codex_replay_tool_dropped": 2,
+    "codex_replay_turn_dropped": 1,
+    "rowsRead": 18,
+    "rowsRecognised": 18
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "17",
+        "output": "9",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "3"
+      },
+      "knownPico": "69500000",
+      "events": 4
+    }
+  },
+  "complete": true
+}

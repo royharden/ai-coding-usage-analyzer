@@ -53,3 +53,38 @@ export type Cost = { kind: 'known'; pico: bigint } | { kind: 'unknown'; reason: 
 export const bucketNames = ['input', 'output', 'cacheWrite5m', 'cacheWrite1h', 'cacheRead'] as const;
 export function zeroBuckets(): Buckets { return { input: 0n, output: 0n, cacheWrite5m: 0n, cacheWrite1h: 0n, cacheRead: 0n }; }
 export function emptyReconciled(): Reconciled { return { events: [], tools: [], turns: [], diagnostics: [], timestamps: [] }; }
+
+export interface AgentCounts { claude: number; codex: number }
+export interface QualityCounts { verified: number; observed_snapshot: number; observed_epoch: number }
+export interface CostSummary {
+  knownPico: bigint; knownByQuality: Record<Quality, bigint>; unknownPriceTokens: Buckets;
+  unknownPriceEvents: { total: number; byReason: Map<UnknownPriceReason, number>; byModel: Map<string, number> };
+  complete: boolean;
+}
+export interface GroupRow {
+  key: string; label: string; tokens: Buckets; knownPico: bigint; unknownPriceEvents: number;
+  events: number; byQuality: QualityCounts;
+}
+export interface Groupings { day: GroupRow[]; project: GroupRow[]; session: GroupRow[]; model: GroupRow[]; agent: GroupRow[] }
+export type MetricValue = { kind: 'count'; value: number } | { kind: 'tokens' | 'money'; value: bigint } |
+  { kind: 'ratio'; numerator: bigint; denominator: bigint } | { kind: 'coverage'; known: number; total: number } |
+  { kind: 'unavailable'; value: 'not available' };
+export interface SessionDuration { agent: Agent; sessionId: string; firstMs: number; lastMs: number; durationMs: number; label: 'within filter' }
+/** Report owns only safe aggregates. It contains neither raw events/tools nor retry hashes or default project paths. */
+export interface Report {
+  schema: 's22-report/1';
+  metadata: { tz: string; since: string | null; until: string | null; priceTableDigest: string;
+    priceTableSchema: 'pricetable/1'; parserSchema: 's22-parser/1'; fullPaths: boolean; bytesRead: number; filesRead: number };
+  complete: boolean; tokens: Buckets; tokensByQuality: Record<Quality, Buckets>; cost: CostSummary;
+  cacheHit: { numerator: bigint; denominator: bigint; display: string };
+  events: { total: number; byQuality: QualityCounts; byAgent: AgentCounts }; modelCalls: number;
+  turns: AgentCounts; tools: { total: number; byName: Map<string, number>; byMcpServer: Map<string, number> };
+  toolResults: { error: number; ok: number; unknown: number }; retries: number; retryAmbiguous: number;
+  errorRate: { claude: { numerator: number; denominator: number; display: string; coverage: string }; codex: 'not available' };
+  codexRetries: 'not available'; sessionDurations: SessionDuration[]; groupings: Groupings;
+  skipped: Map<SkipCode, number>; unresolved: Map<UnresolvedCode, number>; counters: Map<CounterCode, number>;
+  evidence: { category: Diagnostic['category']; code: Diagnostic['code']; sourceRef: SourceRef }[];
+  metricTable: Map<string, MetricValue>;
+  /** M3 adds checked recap segments; absent throughout M2. */
+  recap?: { text: string; spans: { start: number; end: number; metricId: string }[] };
+}
