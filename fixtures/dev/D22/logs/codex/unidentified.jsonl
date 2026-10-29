@@ -1,0 +1,7 @@
+{"timestamp":"2026-10-14T12:00:00Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000002201","cwd":"/synthetic/unidentified/a"}}
+{"timestamp":"2026-10-14T12:00:01Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000002202","cwd":"/synthetic/unidentified/b"}}
+{"synthetic":
+ 	
+{"type":"event_msg","payload":{"type":"token_count","info":null}}
+{"type":"synthetic_unhandled","payload":{}}
+[]

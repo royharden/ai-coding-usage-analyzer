@@ -1,0 +1,2 @@
+{"timestamp":"2026-10-14T11:00:01Z","type":"turn_context","payload":{"turn_id":"d10-no-meta-zero-turn","model":"gpt-test-x","cwd":"/synthetic/codex-project"}}
+{"timestamp":"2026-10-14T11:00:02Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":6,"cached_input_tokens":1,"output_tokens":2,"reasoning_output_tokens":0,"cache_write_input_tokens":0,"total_tokens":8},"last_token_usage":{"input_tokens":6,"cached_input_tokens":1,"output_tokens":2,"reasoning_output_tokens":0,"cache_write_input_tokens":0,"total_tokens":8}}}}

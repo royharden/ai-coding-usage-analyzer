@@ -1,0 +1,6 @@
+{
+  "schema": "pricetable/1",
+  "currency": "USD",
+  "unit": "micro_usd_per_mtok",
+  "rows": []
+}

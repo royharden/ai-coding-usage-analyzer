@@ -1,0 +1,6 @@
+{"timestamp":"2026-10-14T11:00:00Z","type":"session_meta","payload":{"id":"00000000-0000-4000-8000-000000000008","cwd":"/synthetic/codex-project"}}
+{"timestamp":"2026-10-14T11:00:01Z","type":"turn_context","payload":{"turn_id":"d08-turn","model":"gpt-test-x","cwd":"/synthetic/codex-project"}}
+{"timestamp":"2026-10-14T11:00:02Z","type":"event_msg","payload":{"type":"token_count","info":null}}
+{"timestamp":"2026-10-14T11:00:03Z","type":"event_msg","payload":{"type":"token_count","info":{}}}
+{"timestamp":"2026-10-14T11:00:04Z","type":"event_msg","payload":{"type":"token_count","info":{"total_token_usage":{"input_tokens":4,"output_tokens":2}},"turn_id":"d08-turn"}}
+{"timestamp":"2026-10-14T11:00:05Z","type":"token_usage_record","payload":{}}

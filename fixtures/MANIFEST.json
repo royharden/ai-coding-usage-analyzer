@@ -198,7 +198,7 @@
     }
   ],
   "dev": {
-    "status": "planned-not-authored",
+    "status": "authored-unexecuted",
     "fixtureIds": [
       "D01",
       "D02",
@@ -224,6 +224,324 @@
       "D22",
       "D23",
       "D24"
+    ],
+    "files": [
+      {
+        "path": "fixtures/dev/D01/expected.json",
+        "sha256": "aef540ad26261b609f7697936c3d08e21b25797de7bd475d72ce8df28beb5683"
+      },
+      {
+        "path": "fixtures/dev/D01/logs/claude/buckets.jsonl",
+        "sha256": "ee793fb19e175612befeeacef71b43c57990a977527550d0d0106de5514e5d18"
+      },
+      {
+        "path": "fixtures/dev/D02/expected.json",
+        "sha256": "6c71092ce07df850483aa516614691c1840177596d8a2c174a05d399b1c8ffc4"
+      },
+      {
+        "path": "fixtures/dev/D02/logs/codex/rollout-2026-10-14T110000-00000000-0000-4000-8000-000000000002.jsonl",
+        "sha256": "df11fe46ce5f0acd223ea18dcfe12f69d46de65d7127d56224bfcbf180b918ef"
+      },
+      {
+        "path": "fixtures/dev/D02/logs/codex/rollout-2026-10-14T110001-00000000-0000-4000-8000-000000000002.jsonl",
+        "sha256": "17f563792f816e2601d237c936cdefabc71d3698b4fc170f02258d908afd7721"
+      },
+      {
+        "path": "fixtures/dev/D03/expected.json",
+        "sha256": "6e029b30dd46777da657597aa2eb2969435b20b3bfcc0d3e956bf7e85aa853ce"
+      },
+      {
+        "path": "fixtures/dev/D03/logs/claude/streaming.jsonl",
+        "sha256": "bcde5dcd4f8cbaa70ef9195b9dba0d524f57b6ae62b3a388a76b9f4406db1a59"
+      },
+      {
+        "path": "fixtures/dev/D04/expected.json",
+        "sha256": "5f0e743bb5374e25735f47c53bf3874dcd35504ed71b1e7b492db2a4966085c4"
+      },
+      {
+        "path": "fixtures/dev/D04/logs/claude/main.jsonl",
+        "sha256": "df032be8bd816d154d68ce872dd5d8dbfe879967d8065008adeff734088eeb63"
+      },
+      {
+        "path": "fixtures/dev/D04/logs/claude/subagents/agent-d04.jsonl",
+        "sha256": "401c4f69a49c9cc3ffe2b47ea7ac0af4e342d7c9053ed82c195689ef64718b03"
+      },
+      {
+        "path": "fixtures/dev/D05/expected.json",
+        "sha256": "2def73a63fcf042f78bcb431a883184face40c3e9665eed9be0b72aaa407734a"
+      },
+      {
+        "path": "fixtures/dev/D05/logs/claude/conflicts.jsonl",
+        "sha256": "df601c1ea5a3e00cece5a26913aa30c256342e4727c982e430b2c341dca50e37"
+      },
+      {
+        "path": "fixtures/dev/D06/expected.json",
+        "sha256": "7ca8db3ea1f74b8639bfc8d6efc39054514cea39670d13bc7091db59033e4de3"
+      },
+      {
+        "path": "fixtures/dev/D06/logs/claude/requests.jsonl",
+        "sha256": "9e7562b6c4c320c7961a439afcee75e1ebb5d59966e42170fc79ad36f546bf00"
+      },
+      {
+        "path": "fixtures/dev/D07/expected.json",
+        "sha256": "5d9260c83dfa47dc8d8731799a72a5daacfe5f020b82b7872e8d927fd6369905"
+      },
+      {
+        "path": "fixtures/dev/D07/logs/claude/cache-splits.jsonl",
+        "sha256": "5776135f7695f0935d85284c8756a301eec93d538d4611f8f2d076f5e40e8ffd"
+      },
+      {
+        "path": "fixtures/dev/D08/expected.json",
+        "sha256": "608180ce91060555c6a92e094ae6f4e67628b0c7cddbeb8d1f34693aa47f522f"
+      },
+      {
+        "path": "fixtures/dev/D08/logs/claude/validation.jsonl",
+        "sha256": "d1eaace04530c071f122392001c5c091fe2b0b7e0f84406c0292894d7e2109fd"
+      },
+      {
+        "path": "fixtures/dev/D08/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000000008.jsonl",
+        "sha256": "b5fe2d8e2470b8fcb535774344707081814c940d5c9dbea876463bf64c69c6bb"
+      },
+      {
+        "path": "fixtures/dev/D09/expected.json",
+        "sha256": "1299336027ae7684ed78a76929697077af13c8cacb5d9be992b203d649ca7fcb"
+      },
+      {
+        "path": "fixtures/dev/D09/logs/claude/pricing.jsonl",
+        "sha256": "be76d9db33cc5ede5aa698b2051b37718028d185b7c1568f43a7a8c74a7b498e"
+      },
+      {
+        "path": "fixtures/dev/D09/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000000009.jsonl",
+        "sha256": "31bb8c20e20863712042a1d72a0d355df7780fb29fd66d619efaac97e4c588da"
+      },
+      {
+        "path": "fixtures/dev/D10/expected.json",
+        "sha256": "ad073d9435319a4c85f3a144c40a1e8b9329318d235e696c368965c524254d49"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/claude/price-faults.jsonl",
+        "sha256": "3025777b7189dd77dfa3506283456c5d1f3e9ee58ef9b99af7615e1f43d03be8"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001001.jsonl",
+        "sha256": "86397624b1c8d2b34e6746887c04093f8152692977bea5d7f70aacbe9b9a683c"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001002.jsonl",
+        "sha256": "50659fb7cd573ec7d24f460f70bb9b0a32d8c97f60fbc7170b542f04163b18ac"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001003.jsonl",
+        "sha256": "a5dc372ee4ba827bf8568ec5acc947ee783683449a674f7ca30ddf078302032f"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001004.jsonl",
+        "sha256": "ac7bd568020a498905873c4b97eb1480b3c1c7c5b6d81e158627afdcb70d495f"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001005.jsonl",
+        "sha256": "a96083d224c66ea2fd852f909066dd92e1cb4e48bbcae8eacceb781432e4039d"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001006.jsonl",
+        "sha256": "797a4a1bf0c33126895d74dcca31e7c5bf7c60b4232cc9d0824cb91062bf530b"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001007.jsonl",
+        "sha256": "959dbeaabbd85c74d7eee189e574f10bf28a13c8c51b4436eebdee3c31157165"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001008.jsonl",
+        "sha256": "f1d9477051077a25e6e54f0b7e94d14234c5035da97742bdf864a483a3b408f6"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001009.jsonl",
+        "sha256": "2fc14751acc5f2289162c65bc6a077f46cae705b28b942b9e06d9ce5a8478413"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001010.jsonl",
+        "sha256": "566531b8fed294bf9b019f6d0e9db14850e4084df3b6d8f8243f4178402be14f"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001011.jsonl",
+        "sha256": "b9e5a908a3e62e5bcb09f25409faf0f429d86424e21749185d166dfa2aea318f"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001012.jsonl",
+        "sha256": "69ef9b549ea2b2458c578878bc4c88a4294d3401b736c1d07fd03dd098b77cc8"
+      },
+      {
+        "path": "fixtures/dev/D10/logs/codex/rollout-2026-10-14T000000-00000000-0000-4000-8000-000000001013.jsonl",
+        "sha256": "512b935a6c53523895cfecff7021c2a8cff299faf8a21fbd4e498f8bf8150219"
+      },
+      {
+        "path": "fixtures/dev/D11/expected.json",
+        "sha256": "beec7a186837796b20734e1976c761c0ba8445a34f21120e60389394722543b3"
+      },
+      {
+        "path": "fixtures/dev/D11/logs/claude/civil-day.jsonl",
+        "sha256": "1081c6cfce7b3e3e148513845dffff8b4ecb4fe7829f180c5f7268d8368ebf0f"
+      },
+      {
+        "path": "fixtures/dev/D12/expected.json",
+        "sha256": "5d97f232fef848db3bb9e0fd51c6351fca33d6a9f0700b1f86b9a1fd866285a1"
+      },
+      {
+        "path": "fixtures/dev/D12/logs/claude/fall-back.jsonl",
+        "sha256": "ee59ac561d25c3768c12a6430fb46d75a4790be9f34bb7ebc0bbbaea5bdc3f62"
+      },
+      {
+        "path": "fixtures/dev/D13/expected.json",
+        "sha256": "754c003e581ef1cd8e61aa6b1d827859eacbe68b4e0e79e7a645b72e5113a12d"
+      },
+      {
+        "path": "fixtures/dev/D13/logs/claude/filter-state.jsonl",
+        "sha256": "06b24c083653958eacd239a925bf268afb6e27c850d2dda6d8960f2c532f5526"
+      },
+      {
+        "path": "fixtures/dev/D13/logs/codex/rollout-2026-10-14T120000-00000000-0000-4000-8000-000000000013.jsonl",
+        "sha256": "8ba584b753b75b494f45c6a1fcce8b6d4ee8c2efa2615592ff9607fa6f6d81c5"
+      },
+      {
+        "path": "fixtures/dev/D14/expected.json",
+        "sha256": "89b69c3c168844f70baef77070b58fd7a5c9a4c15edee2d47f988c91544fcd80"
+      },
+      {
+        "path": "fixtures/dev/D14/logs/claude/price-boundary.jsonl",
+        "sha256": "83a84d76502ec1a09bcd8c76768303d959e359bc2346c62ec1f25f00fd30531d"
+      },
+      {
+        "path": "fixtures/dev/D15/expected.json",
+        "sha256": "b0070b07d1a8c73b15073634666b7daf7f4115a7447c2b03df1d7ff1599ac992"
+      },
+      {
+        "path": "fixtures/dev/D15/logs/claude/mcp-results.jsonl",
+        "sha256": "e1e4fb42a4311f6d8ce3df181b67c50982bac0cb79d0ae8404643be91faed0a7"
+      },
+      {
+        "path": "fixtures/dev/D15/logs/codex/rollout-2026-10-14T120000-00000000-0000-4000-8000-000000001501.jsonl",
+        "sha256": "7b226387cc1f6396e754ba8014e2fbf2c0cbae7f6338f861531f2914c616a94a"
+      },
+      {
+        "path": "fixtures/dev/D15/logs/codex/rollout-2026-10-14T120000-00000000-0000-4000-8000-000000001502.jsonl",
+        "sha256": "ee9d4ad394057a5d09d9b4717ccd31140c72598d91581c4b96e155eb01ef59b7"
+      },
+      {
+        "path": "fixtures/dev/D16/expected.json",
+        "sha256": "e0a63984d6ae098e6edc47d53576de515f0012177fa7afef37f4f812959d93c8"
+      },
+      {
+        "path": "fixtures/dev/D16/logs/claude/retry-isolation.jsonl",
+        "sha256": "eef90624af19261d5ae5586b6758035ca7d2b38bf9cb2a349bb7ca005fae36af"
+      },
+      {
+        "path": "fixtures/dev/D17/expected.json",
+        "sha256": "ddf4ccc975284bfd82236903e5897305c027eb18a1b9566054792317b248188c"
+      },
+      {
+        "path": "fixtures/dev/D17/logs/claude/late-and-conflicts.jsonl",
+        "sha256": "696372f0bbb4e1751a74e82783833fe7c4a9890b8aa81edbd8f2d19b0ff64017"
+      },
+      {
+        "path": "fixtures/dev/D18/expected.json",
+        "sha256": "394cdfa03e1ecf4c2d1ad8f51b3582a59ee1f8fefe979533424ef82513ccc340"
+      },
+      {
+        "path": "fixtures/dev/D18/logs/claude/alpha.jsonl",
+        "sha256": "de590508459f6da1b8ad14e7157720647ecf0c65f20f7804a997ce424146c1db"
+      },
+      {
+        "path": "fixtures/dev/D18/logs/claude/beta.jsonl",
+        "sha256": "09d815b340dfc8f53a763867d7397980c9c3bb7f8fdc592ff90e51ef7dcbcbe0"
+      },
+      {
+        "path": "fixtures/dev/D19/expected.json",
+        "sha256": "97272c8ce07f48e014eec7cbb3b849032f416b7671b50ff56405526e5ee075b7"
+      },
+      {
+        "path": "fixtures/dev/D19/logs/claude/rounding-components.jsonl",
+        "sha256": "a961e42b68a530f147e65ca98b68b48bb36195e9c015c1d7b3a605d02827ae66"
+      },
+      {
+        "path": "fixtures/dev/D19/logs/codex/rollout-2026-10-14T100000-00000000-0000-4000-8000-000000000019.jsonl",
+        "sha256": "b69ad620def676bf031441361575c3754d095a77aca7f13f56f35f7901b56908"
+      },
+      {
+        "path": "fixtures/dev/D20/expected.json",
+        "sha256": "1b986662ee8ae9c81e6df99ff528f677b1b999e595895445d8dd390d09610610"
+      },
+      {
+        "path": "fixtures/dev/D20/logs/claude/main.jsonl",
+        "sha256": "4e8e01e72a70a4143d61f7536a83be46279c1635c01e0a429f0cb8a19d7e4b33"
+      },
+      {
+        "path": "fixtures/dev/D20/logs/claude/subagents/agent-d20-copy.jsonl",
+        "sha256": "1f91d1779a27862253d7fecc776f1d0c466c83f67d22791d4e1566bf11cce332"
+      },
+      {
+        "path": "fixtures/dev/D20/logs/codex/rollout-2026-10-14T100000-00000000-0000-4000-8000-000000000020.jsonl",
+        "sha256": "224e702679696f8d0aaa4a16dcf331ebd6e287ce1f6143b3733386c2af02af2e"
+      },
+      {
+        "path": "fixtures/dev/D21/expected.json",
+        "sha256": "afbc9976cd34f603ea52775f811cffc256aacb4cfd088fa7a9ff5cd34ada1a7f"
+      },
+      {
+        "path": "fixtures/dev/D21/logs/claude/copied-hostile.jsonl",
+        "sha256": "d6cdd86621d7a4942f15780ddbd9bdc040f3f5317211562f4e25353016e2e9b1"
+      },
+      {
+        "path": "fixtures/dev/D21/logs/claude/hostile-values.jsonl",
+        "sha256": "07b1576b97adad6bfe3f582ba18d41cf26179eac96dcd342db314182ae333736"
+      },
+      {
+        "path": "fixtures/dev/D22/expected.json",
+        "sha256": "67c8c300029362bf531d219a95058e16d3859c3d9238d81c6cb818deb38f1a3f"
+      },
+      {
+        "path": "fixtures/dev/D22/logs/claude/archive.jsonl.zst",
+        "sha256": "85beb5063fb868cdf3c1b77c5eddedba7c38adc7259794febadd0c11cfabedba"
+      },
+      {
+        "path": "fixtures/dev/D22/logs/claude/empty.jsonl",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "fixtures/dev/D22/logs/claude/intake.jsonl",
+        "sha256": "3aefdf19abad970865e4cc334f6aa714deeceb5227430914b28bacac08358c50"
+      },
+      {
+        "path": "fixtures/dev/D22/logs/claude/readme.txt",
+        "sha256": "317c79a06f85d4b3a86e0a5578f7996023761b619dbece58ef6955cfa73b1273"
+      },
+      {
+        "path": "fixtures/dev/D22/logs/codex/unidentified.jsonl",
+        "sha256": "a5b2ce542357307580df7d00b334a92d3d82ddfa65e18da7483ffd01acbacd4f"
+      },
+      {
+        "path": "fixtures/dev/D23/expected.json",
+        "sha256": "1a404933c5096b5dd1e6749948b8c1f6a8f80d9b5adefc58f68d3cbeedf7f31c"
+      },
+      {
+        "path": "fixtures/dev/D23/logs/claude/limits.jsonl",
+        "sha256": "6fe7130e1b52bfd99dbc5516a0189e4b49c1af3d485da2b4e079732e0b81ace9"
+      },
+      {
+        "path": "fixtures/dev/D24/analysis-options.json",
+        "sha256": "5b8e26eb4fc0922a17d6aa61653bd91cff6846d26e687a3e69fb5f1f6ee8901e"
+      },
+      {
+        "path": "fixtures/dev/D24/expected.json",
+        "sha256": "5e4c671fb538568124bc5f7b94c911eec46ad04d509c3f62bb65bd94e8db611b"
+      },
+      {
+        "path": "fixtures/dev/D24/logs/claude/cap-zero.jsonl",
+        "sha256": "131d2bc16e8519f8175a8ffa7349df80f4d374c724c2b79a03e1490e93ef834f"
+      },
+      {
+        "path": "fixtures/prices.test.json",
+        "sha256": "563b85bc04dfd80d8e737b4d7a3b8fe29c78299946cc8108cfe7bfa62544075e"
+      }
     ]
   }
 }

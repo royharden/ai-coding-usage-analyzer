@@ -1,0 +1,113 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D12",
+  "tz": "America/New_York",
+  "since": "2026-11-01",
+  "until": "2026-11-01",
+  "prices": "fixtures/prices.test.json",
+  "tags": [],
+  "traps": [
+    "dst",
+    "civil-day",
+    "inclusive-filter"
+  ],
+  "tokens": {
+    "input": "14",
+    "output": "4",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "0"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "14",
+      "output": "4",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "136000000",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "0",
+    "denominator": "14"
+  },
+  "events": {
+    "total": 4,
+    "byQuality": {
+      "verified": 4,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 4,
+      "codex": 0
+    }
+  },
+  "modelCalls": 4,
+  "turns": {
+    "claude": 0,
+    "codex": 0
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {},
+  "skipped": {},
+  "counters": {
+    "rowsRead": 6,
+    "rowsRecognised": 6
+  },
+  "byDay": {
+    "2026-11-01": {
+      "tokens": {
+        "input": "14",
+        "output": "4",
+        "cacheWrite5m": "0",
+        "cacheWrite1h": "0",
+        "cacheRead": "0"
+      },
+      "knownPico": "136000000",
+      "events": 4
+    }
+  },
+  "complete": true
+}

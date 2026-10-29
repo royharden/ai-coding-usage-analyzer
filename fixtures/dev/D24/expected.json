@@ -1,0 +1,101 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D24",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [],
+  "traps": [
+    "metadata-cap"
+  ],
+  "tokens": {
+    "input": "0",
+    "output": "0",
+    "cacheWrite5m": "0",
+    "cacheWrite1h": "0",
+    "cacheRead": "0"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    }
+  },
+  "cost": {
+    "knownPico": "0",
+    "unknownPriceTokens": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "unknownPriceEvents": {
+      "total": 0,
+      "byReason": {},
+      "byModel": {}
+    },
+    "complete": true
+  },
+  "cacheHit": {
+    "numerator": "0",
+    "denominator": "0"
+  },
+  "events": {
+    "total": 0,
+    "byQuality": {
+      "verified": 0,
+      "observed_snapshot": 0,
+      "observed_epoch": 0
+    },
+    "byAgent": {
+      "claude": 0,
+      "codex": 0
+    }
+  },
+  "modelCalls": 0,
+  "turns": {
+    "claude": 0,
+    "codex": 0
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {
+    "metadata_cap_reached": 1
+  },
+  "skipped": {},
+  "counters": {
+    "rowsRead": 1,
+    "rowsRecognised": 1
+  },
+  "byDay": {},
+  "complete": false
+}

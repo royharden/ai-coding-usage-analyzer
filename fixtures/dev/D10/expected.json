@@ -1,0 +1,151 @@
+{
+  "schema": "s22-expected/1",
+  "id": "D10",
+  "tz": "UTC",
+  "since": null,
+  "until": null,
+  "prices": "fixtures/prices.test.json",
+  "tags": [
+    "accounting-control"
+  ],
+  "traps": [
+    "long-context",
+    "missing-rate",
+    "unknown-price-precedence",
+    "regression-epoch",
+    "cached-exceeds-input",
+    "fork-prefix",
+    "fork-zero-start",
+    "embedded-parent-meta",
+    "fork-unproven",
+    "missing-session-meta",
+    "cache-write-unmodeled",
+    "reasoning-exceeds-output",
+    "incomparable-tie",
+    "ambiguous-context",
+    "inherited-start",
+    "timestamp-context-switch",
+    "unknown-model"
+  ],
+  "tokens": {
+    "input": "107",
+    "output": "52",
+    "cacheWrite5m": "1",
+    "cacheWrite1h": "4",
+    "cacheRead": "200024"
+  },
+  "tokensByQuality": {
+    "verified": {
+      "input": "89",
+      "output": "40",
+      "cacheWrite5m": "1",
+      "cacheWrite1h": "4",
+      "cacheRead": "200018"
+    },
+    "observed_snapshot": {
+      "input": "0",
+      "output": "0",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "0"
+    },
+    "observed_epoch": {
+      "input": "18",
+      "output": "12",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "0",
+      "cacheRead": "6"
+    }
+  },
+  "cost": {
+    "knownPico": "306600000",
+    "unknownPriceTokens": {
+      "input": "14",
+      "output": "6",
+      "cacheWrite5m": "0",
+      "cacheWrite1h": "4",
+      "cacheRead": "200001"
+    },
+    "unknownPriceEvents": {
+      "total": 5,
+      "byReason": {
+        "tier_unsupported": 2,
+        "rate_missing": 1,
+        "no_price_row": 2
+      },
+      "byModel": {
+        "claude-test-b": 3,
+        "claude-test-missing": 1,
+        "unknown": 1
+      }
+    },
+    "complete": false
+  },
+  "cacheHit": {
+    "numerator": "200024",
+    "denominator": "200136"
+  },
+  "events": {
+    "total": 23,
+    "byQuality": {
+      "verified": 17,
+      "observed_snapshot": 0,
+      "observed_epoch": 6
+    },
+    "byAgent": {
+      "claude": 5,
+      "codex": 18
+    }
+  },
+  "modelCalls": 23,
+  "turns": {
+    "claude": 0,
+    "codex": 15
+  },
+  "tools": {
+    "total": 0,
+    "byName": {},
+    "byMcpServer": {}
+  },
+  "toolResults": {
+    "error": 0,
+    "ok": 0,
+    "unknown": 0
+  },
+  "retries": 0,
+  "retryAmbiguous": 0,
+  "unresolved": {
+    "codex_total_regressed": 2,
+    "codex_cached_exceeds_input": 1,
+    "codex_cache_write_unmodeled": 1,
+    "codex_reasoning_exceeds_output": 1,
+    "codex_fork_unproven_prefix": 1,
+    "codex_session_meta_missing": 1,
+    "codex_inherited_start": 1,
+    "codex_ambiguous_order": 3,
+    "codex_ambiguous_context": 1
+  },
+  "skipped": {},
+  "counters": {
+    "baseline_reset_assumed": 6,
+    "codex_embedded_parent_meta": 3,
+    "codex_replay_dropped": 2,
+    "codex_fork_history_unverified": 1,
+    "rowsRead": 69,
+    "rowsRecognised": 69
+  },
+  "byDay": {
+    "2026-10-14": {
+      "tokens": {
+        "input": "107",
+        "output": "52",
+        "cacheWrite5m": "1",
+        "cacheWrite1h": "4",
+        "cacheRead": "200024"
+      },
+      "knownPico": "306600000",
+      "events": 23
+    }
+  },
+  "complete": false
+}
